@@ -1,0 +1,43 @@
+{% extends "assessment/base.html" %}
+{% block content %}
+  <h1 class="mb-4">New Assessment</h1>
+  <form method="post" novalidate>
+    {% csrf_token %}
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="mb-3">
+          <label class="form-label">{{ form.institution_name.label }}</label>
+          {{ form.institution_name }}
+        </div>
+        <div class="mb-3">
+          <label class="form-label">{{ form.institution_type.label }}</label>
+          {{ form.institution_type }}
+        </div>
+      </div>
+    </div>
+
+    {% for group in grouped_fields %}
+      <div class="card mb-4">
+        <div class="card-header fw-bold">{{ group.label }}</div>
+        <div class="card-body">
+          {% for field in group.fields %}
+            <div class="mb-3 pb-2 border-bottom">
+              <p class="mb-2">{{ field.label }}</p>
+              <div class="d-flex flex-wrap gap-3">
+                {% for radio in field %}
+                  <label class="form-check form-check-inline">
+                    {{ radio.tag }}
+                    <span class="form-check-label ms-1">{{ radio.choice_label }}</span>
+                  </label>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary btn-lg mb-5">Submit and See Prediction</button>
+  </form>
+{% endblock %}

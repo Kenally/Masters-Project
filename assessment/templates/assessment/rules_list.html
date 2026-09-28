@@ -1,0 +1,27 @@
+{% extends "assessment/base.html" %}
+{% block content %}
+  <h1 class="mb-4">Association Rules Discovered by Apriori</h1>
+  {% if rules %}
+    <table class="table table-bordered bg-white">
+      <thead>
+        <tr><th>If</th><th>Then</th><th>Support</th><th>Confidence</th><th>Lift</th></tr>
+      </thead>
+      <tbody>
+        {% for rule in rules %}
+          <tr>
+            <td>{{ rule.antecedents }}</td>
+            <td>{{ rule.consequents }}</td>
+            <td>{{ rule.support|floatformat:2 }}</td>
+            <td>{{ rule.confidence|floatformat:2 }}</td>
+            <td>{{ rule.lift|floatformat:2 }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="text-muted">
+      No rules loaded yet. Run <code>python manage.py load_rules</code> after the analysis
+      script has produced <code>assessment/ml/rules.json</code>.
+    </p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "assessment/base.html" %}
+{% block content %}
+  <h1 class="mb-3">Assessment Result</h1>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <h2 class="h4">Predicted AI Adoption Level:
+        <span class="badge
+          {% if assessment.predicted_adoption_level == 'High' %}bg-success
+          {% elif assessment.predicted_adoption_level == 'Moderate' %}bg-warning text-dark
+          {% else %}bg-danger{% endif %}">
+          {{ assessment.predicted_adoption_level }}
+        </span>
+      </h2>
+      <p class="text-muted mb-0">
+        {{ assessment.institution_name|default:"This institution" }}
+        ({{ assessment.institution_type }})
+      </p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header fw-bold">Construct Scores (out of 5)</div>
+    <div class="card-body">
+      <table class="table mb-0">
+        <tr><td>Transparency</td><td>{{ assessment.transparency_score|floatformat:2 }}</td></tr>
+        <tr><td>Accountability</td><td>{{ assessment.accountability_score|floatformat:2 }}</td></tr>
+        <tr><td>Fairness</td><td>{{ assessment.fairness_score|floatformat:2 }}</td></tr>
+        <tr><td>Data Protection</td><td>{{ assessment.data_protection_score|floatformat:2 }}</td></tr>
+        <tr><td>Liability Mechanisms</td><td>{{ assessment.liability_score|floatformat:2 }}</td></tr>
+        <tr><td>Oversight Capacity</td><td>{{ assessment.oversight_score|floatformat:2 }}</td></tr>
+      </table>
+    </div>
+  </div>
+
+  {% if relevant_rules %}
+    <div class="card mb-4">
+      <div class="card-header fw-bold">Related Patterns Found in the Survey Data</div>
+      <div class="card-body">
+        <ul class="mb-0">
+          {% for rule in relevant_rules %}
+            <li>When <strong>{{ rule.antecedents }}</strong>, then typically
+                <strong>{{ rule.consequents }}</strong>
+                (confidence {{ rule.confidence|floatformat:2 }}, lift {{ rule.lift|floatformat:2 }})</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+
+  <a href="{% url 'assessment_form' %}" class="btn btn-outline-primary">Run Another Assessment</a>
+{% endblock %}

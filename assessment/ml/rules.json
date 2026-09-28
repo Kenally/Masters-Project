@@ -1,0 +1,142 @@
+[
+  {
+    "antecedents": "accountability_High, data_protection_High",
+    "consequents": "adoption_High",
+    "support": 0.434,
+    "confidence": 0.885,
+    "lift": 1.421
+  },
+  {
+    "antecedents": "accountability_High",
+    "consequents": "adoption_High",
+    "support": 0.472,
+    "confidence": 0.833,
+    "lift": 1.338
+  },
+  {
+    "antecedents": "data_protection_High, oversight_High",
+    "consequents": "adoption_High",
+    "support": 0.377,
+    "confidence": 0.833,
+    "lift": 1.338
+  },
+  {
+    "antecedents": "accountability_High, fairness_High",
+    "consequents": "adoption_High",
+    "support": 0.358,
+    "confidence": 0.826,
+    "lift": 1.327
+  },
+  {
+    "antecedents": "accountability_High, liability_High",
+    "consequents": "adoption_High",
+    "support": 0.358,
+    "confidence": 0.826,
+    "lift": 1.327
+  },
+  {
+    "antecedents": "accountability_High, oversight_High",
+    "consequents": "adoption_High",
+    "support": 0.358,
+    "confidence": 0.826,
+    "lift": 1.327
+  },
+  {
+    "antecedents": "data_protection_High, fairness_High",
+    "consequents": "adoption_High",
+    "support": 0.358,
+    "confidence": 0.826,
+    "lift": 1.327
+  },
+  {
+    "antecedents": "data_protection_High, liability_High",
+    "consequents": "adoption_High",
+    "support": 0.358,
+    "confidence": 0.826,
+    "lift": 1.327
+  },
+  {
+    "antecedents": "accountability_High, transparency_High",
+    "consequents": "adoption_High",
+    "support": 0.34,
+    "confidence": 0.818,
+    "lift": 1.314
+  },
+  {
+    "antecedents": "data_protection_High, transparency_High",
+    "consequents": "adoption_High",
+    "support": 0.34,
+    "confidence": 0.818,
+    "lift": 1.314
+  },
+  {
+    "antecedents": "fairness_High, liability_High",
+    "consequents": "adoption_High",
+    "support": 0.321,
+    "confidence": 0.81,
+    "lift": 1.3
+  },
+  {
+    "antecedents": "data_protection_High",
+    "consequents": "adoption_High",
+    "support": 0.472,
+    "confidence": 0.806,
+    "lift": 1.295
+  },
+  {
+    "antecedents": "fairness_High, transparency_High",
+    "consequents": "adoption_High",
+    "support": 0.264,
+    "confidence": 0.778,
+    "lift": 1.249
+  },
+  {
+    "antecedents": "liability_High",
+    "consequents": "adoption_High",
+    "support": 0.396,
+    "confidence": 0.75,
+    "lift": 1.205
+  },
+  {
+    "antecedents": "oversight_High, transparency_High",
+    "consequents": "adoption_High",
+    "support": 0.34,
+    "confidence": 0.75,
+    "lift": 1.205
+  },
+  {
+    "antecedents": "fairness_High",
+    "consequents": "adoption_High",
+    "support": 0.377,
+    "confidence": 0.741,
+    "lift": 1.19
+  },
+  {
+    "antecedents": "fairness_High, oversight_High",
+    "consequents": "adoption_High",
+    "support": 0.302,
+    "confidence": 0.727,
+    "lift": 1.168
+  },
+  {
+    "antecedents": "liability_High, oversight_High",
+    "consequents": "adoption_High",
+    "support": 0.302,
+    "confidence": 0.727,
+    "lift": 1.168
+  },
+  {
+    "antecedents": "oversight_High",
+    "consequents": "adoption_High",
+    "support": 0.396,
+    "confidence": 0.724,
+    "lift": 1.163
+  },
+  {
+    "antecedents": "transparency_High",
+    "consequents": "adoption_High",
+    "support": 0.377,
+    "confidence": 0.714,
+    "lift": 1.147
+  }
+]
